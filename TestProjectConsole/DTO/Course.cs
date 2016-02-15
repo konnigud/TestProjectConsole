@@ -40,5 +40,6 @@ namespace TestProjectConsole.DTO
         /// The maximum number of students allowed in the course
         /// </summary>
         public int MaxStudent { get; set; }
+
     }
 }
