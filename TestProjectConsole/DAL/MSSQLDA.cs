@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using TestProjectConsole.DTO;
 
 
@@ -19,7 +20,11 @@ namespace TestProjectConsole.DAL
 
                 try
                 {
-                    myConnection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Snaelda\\TestProjects\\TestProjectConsole\\TestProjectConsole\\AppData\\ConsoleDatabase.mdf;Integrated Security=True";
+
+                    string root = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                    string path = root+"\\AppData\\ConsoleDatabase.mdf";
+
+                    myConnection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename="+path+";Integrated Security=True";
                     List<Course> courses = new List<Course>();
 
                     myConnection.Open();
