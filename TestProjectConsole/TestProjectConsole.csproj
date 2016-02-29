@@ -49,9 +49,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DB2DA.cs" />
     <Compile Include="DAL\MSSQLDA.cs" />
     <Compile Include="DTO\Course.cs" />
     <Compile Include="Program.cs" />
@@ -112,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DataSoap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLLLibrary1\BLLLibrary1.csproj">
+      <Project>{1e034d3e-477f-4aaf-bff9-0660478c6390}</Project>
+      <Name>BLLLibrary1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
